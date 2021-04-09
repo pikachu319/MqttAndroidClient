@@ -208,6 +208,7 @@ public class MyMqttService extends Service {
     @Override
     public void onDestroy() {
         try {
+            mqttAndroidClient.unregisterResources();
             mqttAndroidClient.disconnect(); //断开连接
         } catch (MqttException e) {
             e.printStackTrace();
